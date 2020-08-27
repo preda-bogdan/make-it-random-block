@@ -17,11 +17,18 @@ import Feed from './componets/feed';
 
 
 const buildItem = ( item ) => {
+
+	let image = item.thumbnail;
+
+	if ( item.preview && item.preview.images[0].source ) {
+		image = item.preview.images[0].source.url;
+	}
 	let object = {
 		title: item.title,
 		thumbnail: item.thumbnail,
 		url: item.url,
-		author: item.author
+		author: item.author,
+		ups: item.ups
 	}
 	return object;
   };
@@ -80,6 +87,7 @@ export default function Edit( { className, attributes, setAttributes, isSelected
 		}
 
 		setAttributes( {results: results} );
+		setAttributes( { message: source } );
 	};
 
 	return (

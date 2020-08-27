@@ -66,15 +66,18 @@ registerBlockType( 'create-block/make-it-random-block', {
 	 */
 	supports: {
 		// Removes support for an HTML mode.
-		html: true,
+		html: false,
 	},
 
 	attributes: {
 		message: {
 			type: 'string',
-			source: 'text',
-			selector: 'div'
+			default: ''
 		},
+		results: {
+			type: 'array',
+			default: []
+		}
 	},
 
 	/**

@@ -11,6 +11,7 @@
 
 	.randomItem {
 		display: flex;
+		border-bottom: 1px solid #999;
 		img {
 			display: inline-block;
 			width: 64px;
@@ -23,8 +24,26 @@
 			vertical-align: middle;
 			color: #333;
 			font-size: 24px;
-			min-width: 250px;
+			min-width: 450px;
 			flex-grow: 1;
+			margin: 18px 15px 10px 0;
+			&:hover {
+				color: cornflowerblue;
+			}
+		}
+		span {
+			width: 48px;
+			height: 48px;
+			border-radius: 32px;
+			background-color: orange;
+			text-align: center;
+			display: table-cell;
+			overflow: hidden;
+			vertical-align: middle;
+			padding: 13px 0 13px;
+			font-size: 16px;
+			font-weight: bold;
+			float: right;
 		}
 	}
 }

@@ -466,7 +466,7 @@ var Feed = /*#__PURE__*/function (_Component) {
         }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("a", {
           href: item.url,
           target: "_blank"
-        }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("h4", null, item.title)));
+        }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("h4", null, item.title)), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("span", null, item.ups));
       }));
     }
   }]);
@@ -530,11 +530,18 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 
 var buildItem = function buildItem(item) {
+  var image = item.thumbnail;
+
+  if (item.preview && item.preview.images[0].source) {
+    image = item.preview.images[0].source.url;
+  }
+
   var object = {
     title: item.title,
     thumbnail: item.thumbnail,
     url: item.url,
-    author: item.author
+    author: item.author,
+    ups: item.ups
   };
   return object;
 };
@@ -644,8 +651,11 @@ function Edit(_ref) {
               setAttributes({
                 results: results
               });
+              setAttributes({
+                message: source
+              });
 
-            case 14:
+            case 15:
             case "end":
               return _context2.stop();
           }
@@ -781,7 +791,7 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__["registerBlockType"])('cre
    * This is a short description for your block, can be translated with `i18n` functions.
    * It will be shown in the Block Tab in the Settings Sidebar.
    */
-  description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Example block written with ESNext standard and JSX support – build step required.', 'create-block'),
+  description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Add reddit feeds to your page', 'create-block'),
 
   /**
    * Blocks are grouped into categories to help users browse and discover them.
@@ -800,13 +810,16 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__["registerBlockType"])('cre
    */
   supports: {
     // Removes support for an HTML mode.
-    html: true
+    html: false
   },
   attributes: {
     message: {
       type: 'string',
-      source: 'text',
-      selector: 'div'
+      default: ''
+    },
+    results: {
+      type: 'array',
+      default: []
     }
   },
 

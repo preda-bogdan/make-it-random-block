@@ -8,7 +8,8 @@
   color: #333;
   padding: 2px; }
   .wp-block-create-block-make-it-random-block .randomItem {
-    display: flex; }
+    display: flex;
+    border-bottom: 1px solid #999; }
     .wp-block-create-block-make-it-random-block .randomItem img {
       display: inline-block;
       width: 64px;
@@ -20,8 +21,24 @@
       vertical-align: middle;
       color: #333;
       font-size: 24px;
-      min-width: 250px;
-      flex-grow: 1; }
+      min-width: 450px;
+      flex-grow: 1;
+      margin: 18px 15px 10px 0; }
+      .wp-block-create-block-make-it-random-block .randomItem h4:hover {
+        color: cornflowerblue; }
+    .wp-block-create-block-make-it-random-block .randomItem span {
+      width: 48px;
+      height: 48px;
+      border-radius: 32px;
+      background-color: orange;
+      text-align: center;
+      display: table-cell;
+      overflow: hidden;
+      vertical-align: middle;
+      padding: 13px 0 13px;
+      font-size: 16px;
+      font-weight: bold;
+      float: right; }
 
 
 /*# sourceMappingURL=style-index.css.map*/
