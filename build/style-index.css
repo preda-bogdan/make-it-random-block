@@ -1,0 +1,27 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+.wp-block-create-block-make-it-random-block {
+  color: #333;
+  padding: 2px; }
+  .wp-block-create-block-make-it-random-block .randomItem {
+    display: flex; }
+    .wp-block-create-block-make-it-random-block .randomItem img {
+      display: inline-block;
+      width: 64px;
+      height: 64px;
+      padding: 8px;
+      vertical-align: middle; }
+    .wp-block-create-block-make-it-random-block .randomItem h4 {
+      display: inline-block;
+      vertical-align: middle;
+      color: #333;
+      font-size: 24px;
+      min-width: 250px;
+      flex-grow: 1; }
+
+
+/*# sourceMappingURL=style-index.css.map*/
